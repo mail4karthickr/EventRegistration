@@ -61,7 +61,7 @@ struct CustomLoginView: View {
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(Color(.systemGray3), lineWidth: 1)
                     )
-                    .accessibilityIdentifier("username")
+                    .accessibilityIdentifier(LoginAccessibilityIds.Login.Authentication.username.id)
                 
                 // Password Field
                 SecureField("Password", text: $password)
@@ -76,14 +76,14 @@ struct CustomLoginView: View {
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(Color(.systemGray3), lineWidth: 1)
                     )
-                    .accessibilityIdentifier("password")
+                    .accessibilityIdentifier(LoginAccessibilityIds.Login.Authentication.password.id)
                 
                 if isLoginSuccess {
                     Text("Login successful! Redirecting...")
                         .foregroundColor(.green)
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
-                        .accessibilityIdentifier("success_message")
+                        .accessibilityIdentifier(LoginAccessibilityIds.Login.Authentication.successMessage.id)
                 }
                 
                 // Error Message
@@ -92,7 +92,7 @@ struct CustomLoginView: View {
                         .foregroundColor(.red)
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
-                        .accessibilityIdentifier("error_message_field")
+                        .accessibilityIdentifier(LoginAccessibilityIds.Login.Authentication.errorMessage.id)
                 }
                 
                 // Login Button
@@ -106,7 +106,7 @@ struct CustomLoginView: View {
                         .cornerRadius(12)
                         .shadow(color: .blue.opacity(0.20), radius: 4, x: 0, y: 2)
                 }
-                .accessibilityIdentifier("login")
+                .accessibilityIdentifier(LoginAccessibilityIds.Login.Authentication.loginButton.id)
                 .padding(.top, 8)
                 .disabled(username.isEmpty || password.isEmpty)
                 
